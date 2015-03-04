@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 
 gem 'rails',   '4.2.0'
 
+# Use SCSS for stylesheets
+gem 'sass-rails', '~> 5.0'
+
 # Convertir datos mongoDB en objetos de Ruby
 gem 'mongoid', '~> 4.0.1'
 
@@ -23,6 +26,14 @@ group :development do
   gem 'spring'
   gem 'spring-commands-rspec'
 end
+
+#Asset Gems
+gem 'bootstrap-sass'
+source 'https://rails-assets.org' do
+  gem 'rails-assets-angular'
+end
+
+
 
 # Estas gemas sólo se usan en el entorno de test
 group :test do

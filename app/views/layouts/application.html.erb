@@ -1,14 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="mallesti">
 <head>
   <title>Mallesti</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag  'application', media: 'all'  %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+
+<div ng-controller="CustomersController as customersCtrl">
+
+  <table class="table">
+    <caption>Listado de clientes</caption>
+    <thead>
+      <tr>
+        <td>Nombre</td>
+        <td>Email</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="customer in customersCtrl.customers">
+        <td>{{customer.name}}</td>
+        <td>{{customer.email}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<%= javascript_include_tag 'application' %>
 
 </body>
 </html>
