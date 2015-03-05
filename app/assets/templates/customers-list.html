@@ -5,6 +5,7 @@
       <td>Nombre</td>
       <td>Email</td>
       <td>Información</td>
+      <td>&nbsp;</td>
     </tr>
   </thead>
   <tbody>
@@ -12,5 +13,9 @@
       <td>{{customer.name}}</td>
       <td>{{customer.email}}</td>
       <td><a ui-sref="customer({id_customer: customer.id})">Información</a></td>
+      <td><a href="" ng-click="customersCtrl.removeCustomer(customer)">
+      <button type="button" class="btn btn-default">
+      <span class="glyphicon glyphicon-trash"></span></a></td>
+    </button>
   </tbody>
 </table>

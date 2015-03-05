@@ -12,6 +12,23 @@
       scope.customers = data.customers;
     })
 
+  scope.removeCustomer = function(customer) {
+    if (confirm("¿Estás seguro que deseas borrar el cliente" + customer.name + "?")) {
+      $http.delete("/customers/" + customer.id + ".json")
+        .success(function() {
+          // Busco el índice del array que contiene el objeto "customer"
+          var index = scope.customers.indexOf(customer);
+          // Borra la posición index del array
+          scope.customers.splice(index, 1);
+        })
+        
+    }
+  }
+    $http.get('/customers.json')
+      .success(function(data){
+        scope.customers = data.customers;
+        })
+
   }]);
 
   app.controller('CustomerInfoController', ['$http', '$state', function($http, $state){
