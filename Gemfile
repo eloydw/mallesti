@@ -29,8 +29,11 @@ end
 
 #Asset Gems
 gem 'bootstrap-sass'
+gem 'angular-rails-templates'
 source 'https://rails-assets.org' do
   gem 'rails-assets-angular'
+  gem 'rails-assets-angular-ui-router'
+
 end
 
 

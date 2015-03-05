@@ -1,0 +1,16 @@
+<table class="table" >
+  <caption>Listado de clientes</caption>
+  <thead>
+    <tr>
+      <td>Nombre</td>
+      <td>Email</td>
+      <td>Información</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="customer in customersCtrl.customers">
+      <td>{{customer.name}}</td>
+      <td>{{customer.email}}</td>
+      <td><a ui-sref="customer({id_customer: customer.id})">Información</a></td>
+  </tbody>
+</table>
