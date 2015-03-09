@@ -21,13 +21,10 @@
           // Borra la posición index del array
           scope.customers.splice(index, 1);
         })
-        
     }
+
   }
-    $http.get('/customers.json')
-      .success(function(data){
-        scope.customers = data.customers;
-        })
+
 
   }]);
 
@@ -40,6 +37,31 @@
       scope.customer = data.customer;
     })
   }]);
+
+  app.controller('CustomerFormController', [ '$http', '$state', function($http, $state){
+   var scope = this;
+   scope.mostrar = false;
+   scope.newCustomer = {};
+
+   scope.on = function(){
+     scope.mostrar = !scope.mostrar;
+   }
+
+   scope.createCustomer = function(customer) {
+    if(scope.newCustomer != {}) {
+    $http.post("/customers.json" , {customer: scope.newCustomer})
+      .success(function (data) {
+        customer.push(data.customer);
+        scope.newCustomer = {};
+      })
+      alert('Debes rellenar los campos del formulario por favor')
+      .error(function(data){
+        scope.errors = data.errors;
+      })
+    }
+   }
+
+   }]);
 
 
 // Directives
