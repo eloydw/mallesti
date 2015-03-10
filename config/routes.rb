@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: 'main#main'
   devise_for :users, controllers: {
     sessions: 'sessions', registrations: 'users'
   }
@@ -18,8 +19,4 @@ Rails.application.routes.draw do
 
   # Rutas para los recursos relacionados con Task
   resources :tasks, only: [:show, :update, :destroy]
-end
-
-Rails.application.routes.draw do
-  root to: 'main#main'
 end
