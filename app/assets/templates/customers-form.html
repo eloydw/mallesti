@@ -1,0 +1,52 @@
+<form ctrl="customersCtrl" ng-show="ctrl.mostrar"
+  ng-submit="ctrl.saveCustomer()" novalidate>
+  <div class="form-group" ng-class="{'has-error': ctrl.errors.name}">
+    <label for="exampleInputEmail1">Name</label>
+    <input type="name" class="form-control" id="exampleInputEmail1" placeholder="Introduce tu nombre"
+    ng-model="ctrl.model.name">
+    <div class="alert alert-danger" ng-show="ctrl.errors.name">
+      {{ctrl.errors.name.join(', ')}}
+    </div>
+  </div>
+  <div class="form-group" ng-class="{'has-error': ctrl.errors.email}">
+    <label for="exampleInputPassword1">Email</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Introduce tu email"
+    ng-model="ctrl.model.email">
+    <div class="alert alert-danger" ng-show="ctrl.errors.email">
+      {{ctrl.errors.email.join(', ')}}
+    </div>
+  </div>
+  <div class="form-group" ng-class="{'has-error': ctrl.errors.address}">
+    <label for="exampleInputPassword1">Address</label>
+    <input type="address" class="form-control" id="exampleInputPassword1" placeholder="Introduce tu dirección"
+    ng-model="ctrl.model.address">
+    <div class="alert alert-danger" ng-show="ctrl.errors.address">
+      {{ctrl.errors.address.join(', ')}}
+    </div>
+  </div>
+  <div class="form-group" ng-class="{'has-error': ctrl.errors.city}">
+    <label for="exampleInputPassword1">City</label>
+    <input type="city" class="form-control" id="exampleInputPassword1" placeholder="Introduce tu ciudad"
+    ng-model="ctrl.model.city">
+    <div class="alert alert-danger" ng-show="ctrl.errors.city">
+      {{ctrl.errors.city.join(', ')}}
+    </div>
+  </div>
+  <div class="form-group" ng-class="{'has-error': ctrl.errors.zip_code}">
+    <label for="exampleInputPassword1">Zip code</label>
+    <input type="zip_code" class="form-control" id="exampleInputPassword1" placeholder="Introduce tu Código postal"
+    ng-model="ctrl.model.zip_code">
+    <div class="alert alert-danger" ng-show="ctrl.errors.zip_code">
+      {{ctrl.errors.zip_code.join(', ')}}
+    </div>
+  </div>
+  <div class="form-group" ng-class="{'has-error': ctrl.errors.phone}">
+    <label for="exampleInputPassword1">Telephone number</label>
+    <input type="phone" class="form-control" id="exampleInputPassword1" placeholder="Introduce tu número de  teléfono"
+    ng-model="ctrl.model.phone">
+    <div class="alert alert-danger" ng-show="ctrl.errors.phone">
+      {{ctrl.errors.phone.join(', ')}}
+    </div>
+  </div>
+  <button type="submit" class="btn btn-success">Save</button>
+</form>

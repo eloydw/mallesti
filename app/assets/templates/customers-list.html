@@ -14,70 +14,24 @@
       <td>{{customer.name}}</td>
       <td>{{customer.email}}</td>
       <td><a ui-sref="customer({id_customer: customer.id})">Información</a></td>
+
+
       <td><a href="" ng-click="customersCtrl.removeCustomer(customer)">
-      <button type="button" class="btn btn-default">
-        <span class="glyphicon glyphicon-trash"></span></a></td>
-      </button>
+        <button type="button" class="btn btn-default">
+          <span class="glyphicon glyphicon-trash"></span>
+        </button>
+      </a></td>
+
     </tr>
   </tbody>
 </table>
-  <div ng-controller="CustomerFormController as customerFormCtrl">
+  <div>
     <p>
 
       <button type="button" class="btn btn-primary"
-      ng-click="customerFormCtrl.on()">Create Customer</button>
+      ng-click="customersCtrl.on()">Create Customer</button>
     </p>
-    <form ng-show="customerFormCtrl.mostrar"
-    ng-submit="customerFormCtrl.createCustomer(customersCtrl.customers)" novalidate>
-      <div class="form-group" ng-class="{'has-error': customerFormCtrl.errors.name}">
-        <label for="exampleInputEmail1">Name</label>
-        <input type="name" class="form-control" id="exampleInputEmail1" placeholder="Introduce tu nombre"
-        ng-model="customerFormCtrl.newCustomer.name">
-        <div class="alert alert-danger" ng-show="customerFormCtrl.errors.name">
-          {{customerFormCtrl.errors.name.join(', ')}}
-        </div>
-      </div>
-      <div class="form-group" ng-class="{'has-error': customerFormCtrl.errors.email}">
-        <label for="exampleInputPassword1">Email</label>
-        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Introduce tu email"
-        ng-model="customerFormCtrl.newCustomer.email">
-        <div class="alert alert-danger" ng-show="customerFormCtrl.errors.email">
-          {{customerFormCtrl.errors.email.join(', ')}}
-        </div>
-      </div>
-      <div class="form-group" ng-class="{'has-error': customerFormCtrl.errors.address}">
-        <label for="exampleInputPassword1">Address</label>
-        <input type="address" class="form-control" id="exampleInputPassword1" placeholder="Introduce tu dirección"
-        ng-model="customerFormCtrl.newCustomer.address">
-        <div class="alert alert-danger" ng-show="customerFormCtrl.errors.address">
-          {{customerFormCtrl.errors.address.join(', ')}}
-        </div>
-      </div>
-      <div class="form-group" ng-class="{'has-error': customerFormCtrl.errors.city}">
-        <label for="exampleInputPassword1">City</label>
-        <input type="city" class="form-control" id="exampleInputPassword1" placeholder="Introduce tu ciudad"
-        ng-model="customerFormCtrl.newCustomer.city">
-        <div class="alert alert-danger" ng-show="customerFormCtrl.errors.city">
-          {{customerFormCtrl.errors.city.join(', ')}}
-        </div>
-      </div>
-      <div class="form-group" ng-class="{'has-error': customerFormCtrl.errors.zip_code}">
-        <label for="exampleInputPassword1">Zip code</label>
-        <input type="zip_code" class="form-control" id="exampleInputPassword1" placeholder="Introduce tu Código postal"
-        ng-model="customerFormCtrl.newCustomer.zip_code">
-        <div class="alert alert-danger" ng-show="customerFormCtrl.errors.zip_code">
-          {{customerFormCtrl.errors.zip_code.join(', ')}}
-        </div>
-      </div>
-      <div class="form-group" ng-class="{'has-error': customerFormCtrl.errors.phone}">
-        <label for="exampleInputPassword1">Telephone number</label>
-        <input type="phone" class="form-control" id="exampleInputPassword1" placeholder="Introduce tu número de  teléfono"
-        ng-model="customerFormCtrl.newCustomer.phone">
-        <div class="alert alert-danger" ng-show="customerFormCtrl.errors.phone">
-          {{customerFormCtrl.errors.phone.join(', ')}}
-        </div>
-      </div>
-      <button type="submit" class="btn btn-success"
-      ng-class="{disabled : customerFormCtrl.newCustomer =={}}">Save</button>
-    </form>
+
+    <customers-form ctrl="customersCtrl"></customers-form>
+
   </div>

@@ -9,6 +9,14 @@
   <li class="list-group-item"><h4>city:</h4> {{customerInfoCtrl.customer.city}}</li>
   <li class="list-group-item"><h4>phone:</h4> {{customerInfoCtrl.customer.phone}}</li>
   <li class="list-group-item"><h4>email:</h4> {{customerInfoCtrl.customer.email}}</li>
+  <li class="list-group-item">
+    <td><a href="" ng-click="customerInfoCtrl.on()">
+          <button type="button" class="btn btn-primary">
+            <span class="glyphicon glyphicon-pencil"></span>
+          </button>
+    </a></td>
+  </li>
 </ul>
   </div>
+  <customers-form ctrl="customerInfoCtrl"></customers-form>
 </div>
