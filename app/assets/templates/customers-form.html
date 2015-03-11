@@ -8,6 +8,7 @@
       {{ctrl.errors.name.join(', ')}}
     </div>
   </div>
+
   <div class="form-group" ng-class="{'has-error': ctrl.errors.email}">
     <label for="exampleInputPassword1">Email</label>
     <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Introduce tu email"
@@ -22,6 +23,14 @@
     ng-model="ctrl.model.address">
     <div class="alert alert-danger" ng-show="ctrl.errors.address">
       {{ctrl.errors.address.join(', ')}}
+    </div>
+  </div>
+  <div class="form-group" ng-class="{'has-error': ctrl.errors.town}">
+    <label for="exampleInputEmail1">Town</label>
+    <input type="town" class="form-control" id="exampleInputEmail1" placeholder="Introduce tu población"
+    ng-model="ctrl.model.town">
+    <div class="alert alert-danger" ng-show="ctrl.errors.town">
+      {{ctrl.errors.town.join(', ')}}
     </div>
   </div>
   <div class="form-group" ng-class="{'has-error': ctrl.errors.city}">
@@ -40,12 +49,28 @@
       {{ctrl.errors.zip_code.join(', ')}}
     </div>
   </div>
+  <div class="form-group" ng-class="{'has-error': ctrl.errors.country}">
+    <label for="exampleInputEmail1">Country</label>
+    <input type="country" class="form-control" id="exampleInputEmail1" placeholder="Introduce tu country"
+    ng-model="ctrl.model.country">
+    <div class="alert alert-danger" ng-show="ctrl.errors.country">
+      {{ctrl.errors.country.join(', ')}}
+    </div>
+  </div>
   <div class="form-group" ng-class="{'has-error': ctrl.errors.phone}">
     <label for="exampleInputPassword1">Telephone number</label>
     <input type="phone" class="form-control" id="exampleInputPassword1" placeholder="Introduce tu número de  teléfono"
     ng-model="ctrl.model.phone">
     <div class="alert alert-danger" ng-show="ctrl.errors.phone">
       {{ctrl.errors.phone.join(', ')}}
+    </div>
+  </div>
+  <div class="form-group" ng-class="{'has-error': ctrl.errors.cif}">
+    <label for="exampleInputEmail1">CIF</label>
+    <input type="cif" class="form-control" id="exampleInputEmail1" placeholder="Introduce tu CIF"
+    ng-model="ctrl.model.cif">
+    <div class="alert alert-danger" ng-show="ctrl.errors.cif">
+      {{ctrl.errors.cif.join(', ')}}
     </div>
   </div>
   <button type="submit" class="btn btn-success">Save</button>

@@ -1,6 +1,6 @@
 (function(){
 
-  var app = angular.module('mallesti', ['ui.router', 'permission', 'templates',
+  var app = angular.module('mallesti', ['ui.router', 'permission', 'templates', 'mallesti-components',
   'mallesti-customers', 'mallesti-auth', 'mallesti-permission']
 );
 
@@ -39,17 +39,26 @@ app.factory("httpInterceptor", ['AuthService', function(AuthService) {
       }
     })
 
+    .state('home', {
+      url: '/',
+      templateUrl: 'home.html',
+      data: {
+        permission: {
+          only: ['member'],
+          redirectTo: 'login'
+        }
+      }
+    })
 
-
-    .state('customers', {
-      url:'/customers',
+    .state('home.customers', {
+      url:'customers',
       templateUrl:'customer.html',
       controller: 'CustomersController',
       controllerAs: 'customersCtrl'
     })
 
-    .state('customer', {
-      url:'/customers/:id_customer',
+    .state('home.customer', {
+      url:'customers/:id_customer',
       templateUrl:'customer-info.html',
       controller: 'CustomerInfoController',
       controllerAs: 'customerInfoCtrl'

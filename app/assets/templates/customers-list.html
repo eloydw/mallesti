@@ -13,7 +13,7 @@
     <tr ng-repeat="customer in customersCtrl.customers">
       <td>{{customer.name}}</td>
       <td>{{customer.email}}</td>
-      <td><a ui-sref="customer({id_customer: customer.id})">Información</a></td>
+      <td><a ui-sref="home.customer({id_customer: customer.id})">Información</a></td>
 
 
       <td><a href="" ng-click="customersCtrl.removeCustomer(customer)">

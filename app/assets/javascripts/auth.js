@@ -11,12 +11,12 @@
 
       scope.login = function() {
         $http.post(
-          "http://localhost:4000/session.json",
+          "/session.json",
           {email: scope.session.email, password: scope.session.password}
         )
           .success(function(data) {
             AuthService.saveUser(data.user);
-            $state.go("home.info");
+            $state.go("home.customers");
           })
           .error(function(data) {
             scope.session = {};
